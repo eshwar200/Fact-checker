@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+input, button {
+  width: 300px;
+  padding: 8px;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+#results {
+  margin-top: 10px;
+}
+
+/* Tooltip Styles with Fade-in Animation */
+.factcheck-tooltip {
+  position: absolute;
+  background-color: #FFD700;
+  color: #000;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* Start hidden */
+  opacity: 0; /* For fade-in effect */
+  transform: translateY(-10px); /* For upward slide */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.factcheck-tooltip.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0); /* Slide to original position */
+}
+
+/* Highlighted Text with Pulse Animation */
+.highlighted {
+  background-color: #FFD700;
+  color: #000;
+  cursor: pointer;
+  padding: 0 2px;
+  border-radius: 3px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Pulse Animation Keyframes */
+@keyframes pulse {
+  0%, 100% {
+      background-color: #FFD700;
+      transform: scale(1);
+  }
+  50% {
+      background-color: #FFC300;
+      transform: scale(1.05);
+  }
+}
+
+/* Button Styling with Hover Animation */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Fact-check card with slide and fade animations */
+.factcheck-card {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;  /* Start hidden */
+  transform: translateY(20px);  /* Slide up from bottom */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1001;
+  display: none;
+}
+
+.factcheck-card.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  font-size: 14px;
+  color: #0e0d0d;
+}
+
+button#closeCard {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#closeCard:hover {
+  background-color: #45a049;
+}
